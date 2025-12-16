@@ -1,0 +1,45 @@
+.realtor-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.realtor-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 40, 85, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.realtor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 40, 85, 0.15);
+}
+
+.realtor-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.realtor-details {
+  padding: 1.5rem;
+}
+
+.realtor-details h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+  color: #002855;
+}
+
+.realtor-details p {
+  font-family: "Merriweather Sans", sans-serif;
+  margin: 0.25rem 0;
+  color: #555;
+}

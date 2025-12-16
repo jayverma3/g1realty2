@@ -1,0 +1,146 @@
+.oc-section {
+  background-color: rgb(255, 255, 255);
+  padding: 6rem 2rem;
+  overflow: hidden;
+}
+
+.oc-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.oc-image-wrapper {
+  text-align: center;
+}
+
+.oc-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0);
+}
+
+.oc-content-wrapper {
+  color: #1c1a17;
+}
+
+.oc-main-title {
+  font-family: "fraunces", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0e629e;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.oc-description {
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.oc-commitments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.oc-commitment-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.oc-icon-wrapper {
+  background-color: rgb(236, 232, 224);
+  color: rgb(45, 115, 165);
+  border-radius: 50%;
+  padding: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.oc-icon {
+  stroke-width: 1.5;
+}
+
+.oc-item-text {
+  text-align: left;
+}
+
+.oc-item-title {
+  color: #0e629e;
+  font-family: "fraunces", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.oc-item-description {
+  font-family: "Fraunces", sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 992px) {
+  .oc-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .oc-image-wrapper {
+    order: -1; /* Move image to the top on smaller screens */
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .oc-content-wrapper {
+    text-align: center;
+  }
+
+  .oc-item-text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .oc-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .oc-main-title {
+    font-size: 2.2rem;
+  }
+
+  .oc-description {
+    font-size: 1rem;
+  }
+
+  .oc-item-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oc-commitment-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .oc-item-text {
+    text-align: center;
+  }
+}

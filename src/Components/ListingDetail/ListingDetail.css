@@ -1,0 +1,169 @@
+.listing-detail-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 120px; /* Increased padding to clear fixed header */
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.detail-title {
+  font-family: "Fraunces", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #002855;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.detail-address {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.detail-price {
+  font-family: "Fraunces", serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d2691e;
+  white-space: nowrap;
+  margin-left: 2rem;
+}
+
+.detail-gallery {
+  margin-bottom: 2rem;
+}
+
+.detail-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.detail-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.detail-section-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #002855;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.detail-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.detail-specs-card {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 40, 85, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.detail-specs {
+  margin-top: 1.5rem;
+}
+
+.detail-spec-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-spec-icon {
+  width: 28px;
+  height: 28px;
+  filter: opacity(0.7);
+}
+
+.detail-spec-item div {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-spec-item strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.detail-spec-item span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.request-info-btn {
+  width: 100%;
+  background-color: #d2691e;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  margin-top: 1rem;
+}
+
+.request-info-btn:hover {
+  background-color: #b55a17;
+}
+
+.listing-not-found {
+  text-align: center;
+  padding: 5rem;
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+  }
+  .detail-sidebar {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .listing-detail-page {
+    padding: 1rem;
+    padding-top: 100px; /* Adjusted for mobile header */
+  }
+  .detail-header {
+    text-align: center;
+  }
+  .detail-header-info, .detail-header-price {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  .detail-title {
+    font-size: 2.2rem;
+  }
+  .detail-price {
+    font-size: 2rem;
+  }
+}

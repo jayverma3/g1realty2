@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400">
+  <defs>
+    <linearGradient id="bubbleGradientLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color: rgba(255, 255, 255, 0.1);" />
+      <stop offset="100%" style="stop-color: rgba(202, 240, 248, 0.1);" />
+    </linearGradient>
+  </defs>
+  <g class="bubbles">
+    <circle cx="50" cy="350" r="80" fill="url(#bubbleGradientLight)" />
+    <circle cx="200" cy="100" r="50" fill="rgba(255, 255, 255, 0.08)" />
+    <circle cx="350" cy="300" r="100" fill="rgba(202, 240, 248, 0.05)" />
+    <circle cx="550" cy="150" r="60" fill="url(#bubbleGradientLight)" />
+    <circle cx="750" cy="320" r="90" fill="rgba(255, 255, 255, 0.07)" />
+    <circle cx="950" cy="100" r="70" fill="rgba(202, 240, 248, 0.08)" />
+    <circle cx="1100" cy="250" r="40" fill="url(#bubbleGradientLight)" />
+  </g>
+</svg>

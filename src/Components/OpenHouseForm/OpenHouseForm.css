@@ -1,0 +1,357 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ---------------------------
+   Fonts & Base
+--------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url("../Video_with_title/Bubbles.css");
+
+:root {
+  --brand-start: #007cf0;
+  --brand-end: #00dfd8;
+  --primary-glow: rgba(0, 124, 240, 0.4);
+  --secondary-glow: rgba(0, 223, 216, 0.4);
+
+  --bg-dark: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-placeholder: #94a3b8;
+
+  --success-green: #22c55e;
+  --error-red: #ef4444;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ---------------------------
+   Layout & Background
+--------------------------- */
+.form-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #020024 0%, #0f172a 50%, #002f4b 100%);
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+
+  min-height: 100vh;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgb(133, 128, 226) 0%,
+    #0f172a 50%,
+    #002f4b 100%
+  );
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Glassmorphism Card */
+.form-card {
+  background: linear-gradient(135deg, #020024 0%, #0f172a 50%, #002f4b 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  backdrop-filter: blur(12px);
+  font-family: "Montserrat", sans-serif;
+
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition);
+}
+
+/* ---------------------------
+   Header
+--------------------------- */
+.form-header {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 2.5rem;
+}
+
+.form-icon-background {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
+  color: var(--text-primary);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.form-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-subtitle {
+  color: var(--text-secondary);
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------------------------
+   Sections
+--------------------------- */
+.form-section {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2rem;
+}
+.form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+/* ---------------------------
+   Inputs & Fields
+--------------------------- */
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  color: var(--text-placeholder);
+  transition: var(--transition);
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 3rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: rgba(30, 41, 59, 0.5);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-field::placeholder {
+  color: var(--text-placeholder);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--brand-start);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+.input-field:focus + .input-icon {
+  color: var(--brand-start);
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.col-span-2 {
+  grid-column: span 2;
+}
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+/* ---------------------------
+   Radio Toggles
+--------------------------- */
+.radio-toggle {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  border-radius: var(--radius-md);
+  padding: 0.3rem;
+  border: 1px solid var(--border-color);
+}
+
+.radio-option {
+  flex: 1;
+  text-align: center;
+  padding: 0.7rem;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--text-secondary);
+}
+
+.radio-option.active {
+  background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
+  color: var(--text-primary);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* ---------------------------
+   Consent
+--------------------------- */
+.consent-section {
+  padding-top: 1rem;
+}
+.consent-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.consent-checkbox {
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+.consent-checkbox:checked {
+  background: var(--brand-start);
+  border-color: var(--brand-end);
+}
+
+/* ---------------------------
+   Submit Button
+--------------------------- */
+.form-submit {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--brand-start), var(--brand-end));
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 20px var(--primary-glow);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px var(--secondary-glow);
+}
+.submit-btn:disabled {
+  background: rgba(51, 65, 85, 0.7);
+  cursor: not-allowed;
+  box-shadow: none;
+  color: var(--text-placeholder);
+}
+
+/* ---------------------------
+   Success Card
+--------------------------- */
+.success-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  padding: 3rem;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  max-width: 500px;
+  z-index: 1;
+}
+
+.success-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--success-green), #15803d);
+  color: var(--text-primary);
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.5);
+}
+
+.success-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.success-message {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+/* ---------------------------
+   Responsive
+--------------------------- */
+@media (max-width: 768px) {
+  .form-card,
+  .success-card {
+    padding: 2rem;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .col-span-2 {
+    grid-column: span 1;
+  }
+  .form-title {
+    font-size: 1.8rem;
+  }
+}

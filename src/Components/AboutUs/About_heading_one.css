@@ -1,0 +1,108 @@
+.ah-container {
+  background-color: rgb(255, 255, 255);
+  color: #0e629e;
+  padding: 6rem 2rem;
+  text-align: center;
+  font-family: "Fraunces", sans-serif;
+  overflow-x: hidden;
+}
+
+.ah-main-heading {
+  font-family: "Fraunces", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #0e629e;
+  margin-bottom: 1rem;
+}
+
+.ah-divider {
+  width: 80px;
+  height: 4px;
+  border: none;
+  background-color: var(--accent-color);
+  margin: 0 auto 2.5rem;
+  border-radius: 2px;
+  color: black;
+}
+
+.ah-subheading {
+  font-family: "Fraunces", sans-serif;
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgb(0, 0, 0);
+}
+
+.ah-subheading strong {
+  color: #0e629e; /* dark background */
+  font-weight: 700;
+}
+
+.ah-italic {
+  font-style: italic;
+  color: var(--accent-color);
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.ah-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 4rem auto 0;
+}
+
+.ah-card {
+  background-color: #ededed; /* dark background */
+  border: 0px solid black;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.ah-card-icon {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+.ah-card-icon svg {
+  width: 52px;
+  height: 52px;
+  stroke-width: 1.5;
+}
+
+.ah-card-text {
+  font-family: "Fraunces", sans-serif;
+  color: var(--text-primary);
+}
+
+.ah-card-title {
+  font-family: "Fraunces", sans-serif;
+  color: #0e629e;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+  .ah-container {
+    padding: 4rem 1.5rem;
+  }
+  .ah-main-heading {
+    font-size: 2.8rem;
+  }
+  .ah-cards-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

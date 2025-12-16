@@ -1,0 +1,107 @@
+.listing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 20px;
+}
+
+.listing-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 15px;
+}
+
+.listing-card-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 40, 85, 0.15);
+}
+
+.listing-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 40, 85, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.listing-image-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+
+.listing-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.listing-price {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: rgba(0, 40, 85, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: "Fraunces", serif;
+}
+
+.listing-details {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.listing-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #002855;
+  margin: 0 0 0.5rem;
+}
+
+.listing-address {
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.listing-specs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #333;
+}
+
+.spec-icon {
+  width: 20px;
+  height: 20px;
+  filter: opacity(0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .listing-container {
+    grid-template-columns: 1fr;
+  }
+}

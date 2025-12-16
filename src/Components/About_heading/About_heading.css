@@ -1,0 +1,105 @@
+.ah-three-image-text-container {
+  background-color: var(--bg);
+  color: rgb(0, 0, 0);
+  padding: 4rem 1rem;
+  text-align: center;
+  font-family: "Merriweather Sans", sans-serif;
+}
+
+.ah-main-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #f3ca20;
+  margin-bottom: 0.5rem;
+  font-family: "fraunces", serif;
+}
+
+.home-title-line {
+  width: 70px;
+  height: 3px;
+  background-color: rgb(0, 225, 255);
+  border: none;
+  margin: 0 auto 1.5rem;
+}
+
+.ah-subheading {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgb(0, 0, 0);
+}
+
+.ah-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ah-card {
+  background: #2c2c2c;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 0px solid #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ah-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 30px 15px 30px rgba(0, 0, 0, 0.77);
+}
+
+.ah-card-icon {
+  margin-bottom: 1rem;
+  border: 0px solid black;
+}
+
+.text-yellow-400 {
+  color: rgb(0, 0, 0);
+}
+
+.ah-card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .ah-main-heading {
+    font-size: 2.5rem;
+  }
+  .ah-cards-container {
+    /* Show 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .ah-three-image-text-container {
+    padding: 3rem 1rem;
+  }
+  .ah-main-heading {
+    font-size: 2rem;
+  }
+  .ah-cards-container {
+    /* Stack to a single column on mobile */
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ah-card {
+    padding: 1.2rem;
+  }
+}

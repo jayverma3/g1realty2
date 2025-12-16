@@ -1,0 +1,29 @@
+/* UserAuth styles — modern, accessible, responsive */
+.ua-wrapper{width:100%;display:flex;justify-content:center;padding:32px 16px;background:transparent}
+.ua-card{display:flex;width:100%;max-width:1024px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#fff,#fbfeff);box-shadow:0 18px 46px rgba(8,30,60,0.06)}
+.ua-left{flex:1;padding:28px 26px;min-width:320px}
+.ua-right{flex:0.9;padding:28px 26px;background:linear-gradient(180deg,#f7fbff,#eef7ff);display:flex;align-items:center;justify-content:center}
+.brand h1{margin:0;font-size:1.4rem;color:#05203a}
+.muted{color:#667085;margin-top:6px}
+.tabs{display:flex;gap:8px;margin-top:14px}
+.tabs button{padding:8px 12px;border-radius:9px;border:1px solid transparent;background:transparent;color:#0b63ff;font-weight:700;cursor:pointer}
+.tabs button.active{background:rgba(11,99,255,0.08);border-color:rgba(11,99,255,0.12)}
+.form{margin-top:16px}
+.field{display:flex;flex-direction:column;margin-bottom:12px}
+.field span{font-size:0.86rem;color:#334155}
+.field input{padding:10px 12px;border-radius:10px;border:1px solid #e6eef8;background:#fff;font-size:0.95rem}
+.field input:focus{outline:none;box-shadow:0 8px 22px rgba(11,99,255,0.08);border-color:rgba(11,99,255,0.12)}
+.actions{display:flex;gap:10px;align-items:center;margin-top:8px}
+.btn{padding:10px 14px;border-radius:10px;cursor:pointer;border:0;font-weight:800}
+.btn.primary{background:linear-gradient(180deg,#0b63ff,#0348cc);color:#fff;box-shadow:0 10px 28px rgba(7,56,150,0.08)}
+.btn.ghost{background:transparent;color:#0b63ff;border:1px solid rgba(11,99,255,0.08)}
+.msg{padding:10px 12px;border-radius:8px;margin-bottom:10px;font-weight:700}
+.msg.success{background:#eef9f1;color:#0a8a4a}
+.msg.error{background:#fff5f5;color:#b91c1c}
+.note{margin-top:12px;color:#475569;font-size:0.86rem}
+.illustration{display:flex;gap:14px;align-items:center;max-width:340px}
+.illustration svg{width:140px;height:112px;border-radius:12px;box-shadow:0 12px 36px rgba(6,32,76,0.06)}
+.illu-text h3{margin:0;font-size:1.05rem;color:#05203a}
+.illu-text .muted{margin:0}
+@media(max-width:900px){.ua-card{flex-direction:column}.ua-right{order:2;padding:18px}.ua-left{order:1}}
+@media(max-width:480px){.ua-right{display:none}.ua-left{padding:18px}}

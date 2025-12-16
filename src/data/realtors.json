@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "title": "Senior Realtor",
+    "phone": "123-456-7890",
+    "email": "john.doe@global1realty.com",
+    "image": "/src/assets/images/blank-profile-picture-973460_1280.webp"
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "title": "Lead Agent",
+    "phone": "098-765-4321",
+    "email": "jane.smith@global1realty.com",
+    "image": "/src/assets/images/blank-profile-picture-973460_1280.webp"
+  },
+  {
+    "id": 3,
+    "name": "Mike Williams",
+    "title": "Realtor",
+    "phone": "555-555-5555",
+    "email": "mike.williams@global1realty.com",
+    "image": "/src/assets/images/blank-profile-picture-973460_1280.webp"
+  }
+]

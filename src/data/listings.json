@@ -1,0 +1,46 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Villa in Beverly Hills",
+    "price": "123",
+    "address": "123 Luxury Lane, Beverly Hills, CA",
+    "bedrooms": 5,
+    "bathrooms": 6,
+    "area": "4,500 sqft",
+    "image": "/images/Houses/pexels-christa-grover-977018-2121121.jpg",
+    "description": "A stunning luxury villa with breathtaking views, a private pool, and state-of-the-art amenities. Perfect for those who appreciate the finer things in life."
+  },
+  {
+    "id": 2,
+    "title": "Modern Apartment in Downtown",
+    "price": "123",
+    "address": "456 Urban St, Downtown, NY",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "area": "1,200 sqft",
+    "image": "/images/Houses/pexels-expect-best-79873-323772.jpg",
+    "description": "A sleek and modern apartment in the heart of the city. Close to all major attractions, restaurants, and public transport. Features a rooftop terrace."
+  },
+  {
+    "id": 3,
+    "title": "Cozy Suburban Home",
+    "price": "750",
+    "address": "789 Suburbia Ave, Maplewood, NJ",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "area": "2,000 sqft",
+    "image": "/images/Houses/pexels-pixabay-259588.jpg",
+    "description": "A charming and cozy home in a quiet suburban neighborhood. Perfect for families, with a large backyard and excellent schools nearby."
+  },
+  {
+    "id": 4,
+    "title": "Beachfront Property",
+    "price": "280",
+    "address": "101 Ocean Drive, Miami, FL",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "area": "3,500 sqft",
+    "image": "/images/Houses/pexels-emrecan-2079234.jpg",
+    "description": "Wake up to the sound of the waves in this beautiful beachfront property. Features direct beach access, a large deck, and panoramic ocean views."
+  }
+]

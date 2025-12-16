@@ -1,0 +1,19 @@
+.order-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.orders-list {
+  list-style: none;
+  padding: 0;
+}
+
+.orders-list li {
+  background: white;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+.line-scroller-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0, 1);
+  z-index: 10000;
+}
+
+.line-scroller {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(32, 255, 255) 0%,
+    rgb(32, 22, 180) 100%
+  );
+  transition: height 0.1s ease-out;
+  border-radius: 2px;
+}

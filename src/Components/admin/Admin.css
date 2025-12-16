@@ -1,0 +1,44 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 220px;
+  background: #020617;
+  color: white;
+  padding: 20px;
+}
+
+.admin-sidebar button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: none;
+  color: #cbd5e1;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-sidebar button.active,
+.admin-sidebar button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.admin-table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
