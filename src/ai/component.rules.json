@@ -1,0 +1,14 @@
+{
+  "react": {
+    "allowed": ["useState", "useEffect", "props", "functional components"],
+    "forbidden": [
+      "class components",
+      "direct DOM manipulation",
+      "window globals"
+    ]
+  },
+  "styling": {
+    "method": "css",
+    "scoped": true
+  }
+}

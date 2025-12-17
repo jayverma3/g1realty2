@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const API_USERS = "https://global1realty.com/api/admin/users.php";
+const API_USERS = "https://global1realty.com/api/users.php";
 
 export default function AdminUsers() {
   const [users, setUsers] = useState([]);

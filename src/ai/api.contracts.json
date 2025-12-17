@@ -1,0 +1,12 @@
+{
+  "auth": {
+    "login": "/api/login.php",
+    "logout": "/api/logout.php",
+    "dashboard": "/api/dashboard.php"
+  },
+  "orders": {
+    "list": "/api/orders_list.php",
+    "create": "/api/order_create.php",
+    "update": "/api/order_update.php"
+  }
+}

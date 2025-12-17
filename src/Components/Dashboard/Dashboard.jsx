@@ -16,91 +16,62 @@ export default function Dashboard() {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    let mounted = true;
+
     fetch(API_DASHBOARD, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => {
-        if (!data.user) throw new Error("Invalid session");
-        setUser(data.user);
+        if (!data?.user) throw new Error("Session expired");
+        if (mounted) setUser(data.user);
       })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      .catch((err) => mounted && setError(err.message))
+      .finally(() => mounted && setLoading(false));
+
+    return () => (mounted = false);
   }, []);
 
   const logout = async () => {
-    await fetch(API_LOGOUT, { method: "POST", credentials: "include" });
-    window.location.href = "/login";
+    try {
+      await fetch(API_LOGOUT, {
+        method: "POST",
+        credentials: "include",
+      });
+    } finally {
+      window.location.href = "/login";
+    }
   };
 
-  if (loading) return <div className="loader">Loading...</div>;
-
-  if (error || !user)
-    return (
-      <div className="dashboard-error">
-        <h2>Access Denied</h2>
-        <p>{error}</p>
-        <a href="/login">Go to Login</a>
-      </div>
-    );
-
-  return (
-    <div className="dashboard-layout">
-      <aside className="sidebar">
-        <h2 className="logo">MyAccount</h2>
-
-        <nav>
-          <button
-            onClick={() => setActiveTab("dashboard")}
-            className={activeTab === "dashboard" ? "active" : ""}
-          >
-            Dashboard
-          </button>
-          <button
-            onClick={() => setActiveTab("profile")}
-            className={activeTab === "profile" ? "active" : ""}
-          >
-            Profile
-          </button>
-          <button
-            onClick={() => setActiveTab("orders")}
-            className={activeTab === "orders" ? "active" : ""}
-          >
-            Orders
-          </button>
-          <button
-            onClick={() => setActiveTab("security")}
-            className={activeTab === "security" ? "active" : ""}
-          >
-            Security
-          </button>
-          <button
-            onClick={() => setActiveTab("settings")}
-            className={activeTab === "settings" ? "active" : ""}
-          >
-            Settings
-          </button>
-        </nav>
-
-        <button className="logout" onClick={logout}>
-          Logout
-        </button>
-      </aside>
-
-      <main className="content">
-        {activeTab === "dashboard" && (
+  const renderContent = () => {
+    switch (activeTab) {
+      case "profile":
+        return <Profile user={user} />;
+      case "orders":
+        return <Orders />;
+      case "security":
+        return <Security />;
+      case "settings":
+        return <Settings />;
+      default:
+        return (
           <>
-            <h1>Welcome, {user.full_name}</h1>
+            <h1 className="welcome">
+              Welcome, <span>{user.full_name}</span>
+            </h1>
+            <p className="subtitle">Here’s an overview of your account</p>
 
-            <div className="cards">
-              <div className="card">
-                <h3>Email</h3>
+            <div className="stats">
+              <div className="stat-card">
+                <h4>Email</h4>
                 <p>{user.email}</p>
               </div>
-              <div className="card">
-                <h3>Status</h3>
-                <p className="verified">Verified</p>
+
+              <div className="stat-card">
+                <h4>Status</h4>
+                <p className="status verified">Verified</p>
               </div>
-              <div className="card">
-                <h3>Member Since</h3>
+
+              <div className="stat-card">
+                <h4>Member Since</h4>
                 <p>{new Date(user.created_at).toDateString()}</p>
               </div>
             </div>
@@ -117,13 +88,51 @@ export default function Dashboard() {
               </button>
             </div>
           </>
-        )}
+        );
+    }
+  };
 
-        {activeTab === "profile" && <Profile user={user} />}
-        {activeTab === "orders" && <Orders />}
-        {activeTab === "security" && <Security />}
-        {activeTab === "settings" && <Settings />}
-      </main>
+  if (loading) {
+    return <div className="loader">Loading dashboard...</div>;
+  }
+
+  if (error || !user) {
+    return (
+      <div className="dashboard-error">
+        <h2>Access Denied</h2>
+        <p>{error || "Please login again."}</p>
+        <a href="/login" className="btn-primary">
+          Go to Login
+        </a>
+      </div>
+    );
+  }
+
+  return (
+    <div className="dashboard-layout">
+      <aside className="sidebar">
+        <h2 className="logo">MyAccount</h2>
+
+        <nav>
+          {["dashboard", "profile", "orders", "security", "settings"].map(
+            (tab) => (
+              <button
+                key={tab}
+                className={activeTab === tab ? "active" : ""}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              </button>
+            )
+          )}
+        </nav>
+
+        <button className="logout-btn" onClick={logout}>
+          Logout
+        </button>
+      </aside>
+
+      <main className="content">{renderContent()}</main>
     </div>
   );
 }

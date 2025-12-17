@@ -1,0 +1,20 @@
+{
+  "frontend": {
+    "framework": "React",
+    "bundler": "Vite",
+    "state": "hooks",
+    "routing": "react-router"
+  },
+  "backend": {
+    "type": "PHP",
+    "auth": "session",
+    "database": "MySQL"
+  },
+  "folders": {
+    "components": "Reusable UI",
+    "pages": "Route-level UI",
+    "features": "Business logic",
+    "services": "API access",
+    "layouts": "Page layouts"
+  }
+}

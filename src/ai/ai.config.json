@@ -1,0 +1,10 @@
+{
+  "engine": "local",
+  "language": "javascript",
+  "framework": "react-vite",
+  "backend": "php",
+  "safeMode": true,
+  "backup": true,
+  "diffOnly": true,
+  "maxFilesPerRun": 5
+}

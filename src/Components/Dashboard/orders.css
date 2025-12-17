@@ -4,16 +4,34 @@
   margin-bottom: 20px;
 }
 
-.orders-list {
-  list-style: none;
-  padding: 0;
+.order-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
-.orders-list li {
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
   background: white;
+  border-radius: 10px;
+}
+
+.orders-table th,
+.orders-table td {
   padding: 12px;
-  margin-bottom: 8px;
-  border-radius: 6px;
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+
+.status.pending {
+  color: orange;
+}
+.status.processing {
+  color: blue;
+}
+.status.completed {
+  color: green;
+}
+.status.cancelled {
+  color: red;
 }

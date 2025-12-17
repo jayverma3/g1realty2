@@ -1,47 +1,51 @@
 import { useEffect, useState } from "react";
 
-const API_ORDERS = "https://global1realty.com/api/admin/orders.php";
+const API = "https://global1realty.com/api/orders.php";
+const UPDATE = "https://global1realty.com/api/order_update.php";
 
 export default function AdminOrders() {
   const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    fetch(API_ORDERS, { credentials: "include" })
+  const load = () => {
+    fetch(API, { credentials: "include" })
       .then((res) => res.json())
       .then((data) => setOrders(data.orders || []));
-  }, []);
+  };
+
+  useEffect(load, []);
 
   const updateStatus = async (id, status) => {
-    await fetch(API_ORDERS, {
-      method: "PUT",
+    const form = new FormData();
+    form.append("id", id);
+    form.append("status", status);
+
+    await fetch(UPDATE, {
+      method: "POST",
+      body: form,
       credentials: "include",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, status }),
     });
 
-    setOrders((prev) => prev.map((o) => (o.id === id ? { ...o, status } : o)));
+    load();
   };
 
   return (
-    <>
-      <h1>Orders</h1>
+    <div>
+      <h2>Admin Order Management</h2>
 
-      <table className="admin-table">
+      <table>
         <thead>
           <tr>
-            <th>Order</th>
             <th>User</th>
+            <th>Title</th>
             <th>Status</th>
-            <th>Update</th>
+            <th>Amount</th>
           </tr>
         </thead>
-
         <tbody>
           {orders.map((o) => (
             <tr key={o.id}>
+              <td>{o.email}</td>
               <td>{o.title}</td>
-              <td>{o.user_email}</td>
-              <td>{o.status}</td>
               <td>
                 <select
                   value={o.status}
@@ -53,10 +57,11 @@ export default function AdminOrders() {
                   <option>cancelled</option>
                 </select>
               </td>
+              <td>₹{o.amount}</td>
             </tr>
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
